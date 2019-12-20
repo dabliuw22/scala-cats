@@ -21,5 +21,5 @@ scalacOptions ++= Seq(
   "-deprecation",
   "-unchecked",
   "-language:postfixOps",
-  "-language:higherKinds"
+  "-language:higherKinds" // or import scala.language.higherKinds
 )
