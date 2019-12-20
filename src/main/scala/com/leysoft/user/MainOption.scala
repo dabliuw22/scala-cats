@@ -3,7 +3,7 @@ package com.leysoft.user
 import akka.actor.ActorSystem
 import com.leysoft.user.application.UserServiceFunctional
 import com.leysoft.user.domain.User
-import com.leysoft.user.infrastructure.{UserPublisherOption, UserRepositoryOption}
+import com.leysoft.user.infrastructure.scala.option.{UserPublisherOption, UserRepositoryOption}
 
 object MainOption extends App {
   implicit val system = ActorSystem("option-system")

@@ -3,7 +3,7 @@ package com.leysoft.user
 import akka.actor.ActorSystem
 import com.leysoft.user.application.UserServiceFunctional
 import com.leysoft.user.domain.User
-import com.leysoft.user.infrastructure.{UserPublisherMonix, UserRepositoryMonix}
+import com.leysoft.user.infrastructure.monix.{UserPublisherMonix, UserRepositoryMonix}
 import monix.execution.{Ack, Scheduler}
 
 import scala.concurrent.Future

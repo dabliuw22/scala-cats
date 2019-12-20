@@ -3,7 +3,7 @@ package com.leysoft.user
 import akka.actor.ActorSystem
 import com.leysoft.user.application.UserServiceFunctional
 import com.leysoft.user.domain.User
-import com.leysoft.user.infrastructure.{UserPublisherAsyncScala, UserRepositoryAsyncScala}
+import com.leysoft.user.infrastructure.scala.future.{UserPublisherAsyncScala, UserRepositoryAsyncScala}
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}

@@ -1,9 +1,10 @@
-package com.leysoft.user.infrastructure
+package com.leysoft.user.infrastructure.scala.future
 
-import cats.effect.IO
 import com.leysoft.user.domain.{User, UserRepository}
 
-final case class UserRepositoryAsyncCats() extends UserRepository[IO] {
+import scala.concurrent.{ExecutionContext, Future}
+
+final case class UserRepositoryAsyncScala()(implicit context: ExecutionContext) extends UserRepository[Future] {
 
   private val users = collection.mutable.Map[Int, User](
     1 -> User(1, "User1"),
@@ -11,19 +12,19 @@ final case class UserRepositoryAsyncCats() extends UserRepository[IO] {
     3 -> User(3, "User3")
   )
 
-  override def save(user: User): IO[User] = IO {
+  override def save(user: User): Future[User] = Future {
     users.put(user.id, user) match {
       case Some(value) => value
       case _ => user
     }
   }
 
-  override def findBy(id: Int): IO[User] = IO {
+  override def findBy(id: Int): Future[User] = Future {
     users.get(id) match {
       case Some(value) => value
       case _ => throw new RuntimeException
     }
   }
 
-  override def findAll: IO[Seq[User]] = IO { users.values.toList }
+  override def findAll: Future[Seq[User]] = Future { users.values.toList }
 }

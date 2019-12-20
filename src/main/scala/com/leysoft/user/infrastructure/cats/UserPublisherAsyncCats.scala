@@ -1,4 +1,4 @@
-package com.leysoft.user.infrastructure
+package com.leysoft.user.infrastructure.cats
 
 import cats.effect.IO
 import com.leysoft.user.domain.{User, UserPublisher}

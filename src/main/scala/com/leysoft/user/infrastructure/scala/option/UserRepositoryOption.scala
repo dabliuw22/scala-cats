@@ -1,4 +1,4 @@
-package com.leysoft.user.infrastructure
+package com.leysoft.user.infrastructure.scala.option
 
 import com.leysoft.user.domain.{User, UserRepository}
 

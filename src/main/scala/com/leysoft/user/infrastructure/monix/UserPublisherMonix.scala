@@ -1,4 +1,4 @@
-package com.leysoft.user.infrastructure
+package com.leysoft.user.infrastructure.monix
 
 import com.leysoft.user.domain.{User, UserPublisher}
 import monix.reactive.Observable
