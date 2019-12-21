@@ -11,7 +11,7 @@ object MainReactor extends App {
   implicit val system = ActorSystem("reactor-system")
   val userRepository = UserRepositoryMono()
   val userPublisher = UserPublisherMono()
-  import infrastructure.reactor.FlatMapInstances._
+  import infrastructure.reactor.MonadInstances._
   val userService = UserServiceFunctional(userRepository, userPublisher)
   userService.create(User(4, "User4")).subscribe(asJavaConsumer({ element => println(s"User: $element") }),
       asJavaConsumer({ error => println(s"Error: $error") }))
