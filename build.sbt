@@ -10,7 +10,7 @@ val catsVersion = "2.0.0"
 val monixParent = "io.monix"
 val monixVersion = "3.1.0"
 val reactorProjectParent = "io.projectreactor"
-val reactorProjectVersion = "0.4.7"
+val reactorProjectVersion = "0.5.0"
 
 libraryDependencies ++= Seq(
   akkaParent %% "akka-actor" % akkaVersion,
@@ -19,7 +19,7 @@ libraryDependencies ++= Seq(
   typeLevelParent %% "cats-core" % catsVersion,
   typeLevelParent %% "cats-effect" % catsVersion,
   monixParent %% "monix-reactive" % monixVersion,
-  reactorProjectParent % "reactor-scala-extensions_2.13.0-M3" % reactorProjectVersion,
+  reactorProjectParent %% "reactor-scala-extensions" % reactorProjectVersion,
 )
 
 scalacOptions ++= Seq(

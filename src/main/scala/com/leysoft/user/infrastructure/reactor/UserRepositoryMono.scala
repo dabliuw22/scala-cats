@@ -23,5 +23,5 @@ final case class UserRepositoryMono() extends UserRepository[Mono] {
     case _ => Mono.error(new RuntimeException)
   }
 
-  override def findAll: Mono[Seq[User]] = Mono.just(users.values.toList)
+  override def findAll: Mono[Seq[User]] = Mono.just { users.values.toList }
 }
