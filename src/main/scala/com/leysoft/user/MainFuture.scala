@@ -1,7 +1,6 @@
 package com.leysoft.user
 
 import akka.actor.ActorSystem
-import com.leysoft.user.application.UserServiceFunctional
 import com.leysoft.user.domain.User
 import com.leysoft.user.infrastructure.scala.future.{UserPublisherAsyncScala, UserRepositoryAsyncScala}
 
@@ -14,7 +13,7 @@ object MainFuture extends App {
   val userRepository = UserRepositoryAsyncScala()
   val userPublisher = UserPublisherAsyncScala()
   import cats.instances.future._ // or import cats.instances._
-  val userService = UserServiceFunctional(userRepository, userPublisher)
+  val userService = application.UserServiceFunctional(userRepository, userPublisher)
   userService.create(User(4, "User4")).onComplete {
     case Success(value) => println(s"User: $value")
     case Failure(error) => println(s"Error: $error")
